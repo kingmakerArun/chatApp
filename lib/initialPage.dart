@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:icon_decoration/icon_decoration.dart';
 
+import 'ChatScreen.dart';
+
 class InitialPage extends StatefulWidget {
   const InitialPage({super.key});
 
@@ -12,7 +14,6 @@ class _InitialPageState extends State<InitialPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.blue,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -42,20 +43,30 @@ class _InitialPageState extends State<InitialPage> {
 
     Row(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-    DecoratedIcon(
-    icon: Icon(
+    children: <Widget>
+    [
+      IconButton(onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatScreen()));
+      }, icon:   Icon(
     Icons.arrow_right_alt_rounded,
     color: Colors.lightBlueAccent,
     size: 36,
     shadows: [
     Shadow(blurRadius: 5, color: Colors.lightBlueAccent),
     ],
-    ),
-    ),
+    ),),
+    // DecoratedIcon(
+    // icon: Icon(
+    // Icons.arrow_right_alt_rounded,
+    // color: Colors.lightBlueAccent,
+    // size: 36,
+    // shadows: [
+    // Shadow(blurRadius: 5, color: Colors.lightBlueAccent),
+    // ],
+    // ),
+    // ),
     ],
     ),
-
         ],
       ),
     );
